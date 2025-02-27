@@ -3,7 +3,7 @@ import pandas as pd
 import mysql.connector
 
 # Establishing database connection
-mycon = mysql.connector.connect(host="your-database-host.com", user="root", password="root", database="sboutique")
+mycon = mysql.connector.connect(host="your-database-host.com", user="remo", password="Bavi", database="sboutique")
 mycur = mycon.cursor()
 
 # Utility Functions
