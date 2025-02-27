@@ -3,7 +3,17 @@ import pandas as pd
 import mysql.connector
 
 # Establishing database connection
-mycon = mysql.connector.connect(host="127.0.0.1", user="remo", password="Bavi", database="sboutique")
+try:
+    mycon = mysql.connector.connect(
+        host="127.0.0.1",  # Keep as 127.0.0.1 for local connection
+        user="remo",  # Your MySQL user
+        password="Bavi",  # Your MySQL password
+        database="sboutique",  # Your database name
+        port=3306  # Default MySQL port
+    )
+    st.success("Connected to MySQL successfully!")
+except mysql.connector.Error as e:
+    st.error(f"Error connecting to MySQL: {e}")
 mycur = mycon.cursor()
 
 # Utility Functions
